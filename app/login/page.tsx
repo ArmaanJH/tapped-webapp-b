@@ -1,26 +1,127 @@
 "use client";
 
+import React, { useState } from "react";
 import { auth } from "../../config/firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuth } from "../../context/AuthContext";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Login = () => {
-  const [user, setUser] = useAuthState(auth);
+  const router = useRouter();
   const googleAuth = new GoogleAuthProvider();
+  const { user, login, googleLogin } = useAuth();
 
-  const login = async () => {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleLogin = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      await login(data.email, data.password);
+      router.push("/feed");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleGoogleLogin = async (e: any) => {
+    e.preventDefault();
+
+    try {
+      await googleLogin();
+      router.push("/feed");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const loginGoogle = async () => {
     const result = await signInWithPopup(auth, googleAuth);
   };
 
-  // useEffect(() => {
-  //   console.log(user);
-  // }, [user]);
-
   return (
     <div className="grid grid-cols-1 gap-2 p-16 rounded-lg shadow-lg bg-[#363636] ">
-      <h1 className="text-center font-satoshi tapped_txt_blue">LOGIN</h1>
+      <div className="flex items-center justify-center pb-5">
+        <Image
+          src="/assets/images/tappedLogoReverse.png"
+          alt="Tapped_Logo"
+          width={330}
+          height={90}
+        />
+      </div>
 
-      <button onClick={login} type="button" className="google_btn">
+      <form className="w-full max-w-sm" onSubmit={handleLogin}>
+        <div className="md:flex md:items-center mb-6">
+          <div className="md:w-1/3">
+            <label
+              className="block text-gray-500 font-bold text-xs md:text-right mb-1 md:mb-0 pr-4"
+              htmlFor="inline-email"
+            >
+              Email
+            </label>
+          </div>
+          <div className="md:w-2/3">
+            <input
+              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
+              id="inline-email"
+              type="text"
+              placeholder=""
+              onChange={(e: any) =>
+                setData({
+                  ...data,
+                  email: e.target.value,
+                })
+              }
+              value={data.email || ""}
+            ></input>
+          </div>
+        </div>
+        <div className="md:flex md:items-center mb-6">
+          <div className="md:w-1/3">
+            <label
+              className="block text-gray-500 font-bold text-xs md:text-right mb-1 md:mb-0 pr-4"
+              htmlFor="inline-password"
+            >
+              Password
+            </label>
+          </div>
+          <div className="md:w-2/3">
+            <input
+              className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white"
+              id="inline-password"
+              type="password"
+              placeholder=""
+              onChange={(e: any) =>
+                setData({
+                  ...data,
+                  password: e.target.value,
+                })
+              }
+              value={data.password || ""}
+            ></input>
+          </div>
+        </div>
+
+        <div className="md:flex md:items-center">
+          <div className="md:w-1/3">
+            <Link href="/sign-up">
+              <button className="tapped_signup_btn">Sign Up</button>
+            </Link>
+          </div>
+          <div className="md:w-2/3">
+            <button className="tapped_btn w-full" type="submit">
+              Login
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <button onClick={handleGoogleLogin} type="button" className="google_btn">
         <svg
           className="w-4 h-4 mr-2 -ml-1"
           aria-hidden="true"
@@ -56,12 +157,6 @@ const Login = () => {
         </svg>
         Sign in with Apple
       </button>
-
-      {user ? (
-        <p className="tapped_txt_blue">Welcome, {user.displayName}</p>
-      ) : (
-        ""
-      )}
     </div>
   );
 };

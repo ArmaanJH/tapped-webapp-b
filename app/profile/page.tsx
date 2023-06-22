@@ -1,9 +1,13 @@
-import React from 'react'
+"use client";
+
+import React from "react";
+import { useAuth } from "../../context/AuthContext";
 
 const Profile = () => {
-  return (
-    <div>Profile</div>
-  )
-}
+  const { user } = useAuth();
+  console.log(user);
 
-export default Profile
+  return <div>Profile</div>;
+};
+
+export default Profile;
