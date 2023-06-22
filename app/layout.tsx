@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
+import { AuthContextProvider } from "../context/AuthContext";
 
 export const metadata = {
   title: "Tapped",
@@ -18,8 +19,10 @@ export default function RootLayout({
           <div className="bg-black" />
         </div>
         <main className="app">
-          <Navbar />
-          {children}
+          <AuthContextProvider>
+            <Navbar />
+            {children}
+          </AuthContextProvider>
         </main>
       </body>
     </html>
