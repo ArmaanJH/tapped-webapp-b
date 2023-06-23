@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
-  const { user, signup } = useAuth();
+  const { user, signup, login } = useAuth();
+  const router = useRouter();
 
   const [data, setData] = useState({
     email: "",
@@ -26,6 +28,8 @@ const SignUp = () => {
 
     try {
       await signup(data.email, data.password);
+      await login(data.email, data.password);
+      router.push("/onboard");
     } catch (err) {
       console.log(err);
     }
