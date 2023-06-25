@@ -60,54 +60,54 @@ const Onboard = () => {
       youtubeChannelId: "",
     });
 
-    let currentUser: UserModel = {
-      id: user.uid,
-      email: user.email,
+    // let currentUser: UserModel = {
+    //   id: user.uid,
+    //   email: user.email,
 
-      username: data.handle,
+    //   username: data.handle,
 
-      artistName: data.name,
-      bio: data.bio,
-      genres: [""],
-      occupations: [""],
-      label: "",
+    //   artistName: data.name,
+    //   bio: data.bio,
+    //   genres: [""],
+    //   occupations: [""],
+    //   label: "",
 
-      profilePicture: "/assets/images/profile.jpg",
+    //   profilePicture: "/assets/images/profile.jpg",
 
-      placeId: data.location, //google maps api location later on
-      geohash: "", //hash of latitude and logitude
-      lat: 0,
-      lng: 0,
+    //   placeId: data.location, //google maps api location later on
+    //   geohash: "", //hash of latitude and logitude
+    //   lat: 0,
+    //   lng: 0,
 
-      loopsCount: 0,
-      badgesCount: 0,
-      followerCount: 0,
-      followingCount: 0,
+    //   loopsCount: 0,
+    //   badgesCount: 0,
+    //   followerCount: 0,
+    //   followingCount: 0,
 
-      deleted: false,
-      shadowBanned: false,
-      accountType: "basic",
+    //   deleted: false,
+    //   shadowBanned: false,
+    //   accountType: "basic",
 
-      epkUrl: "",
+    //   epkUrl: "",
 
-      youtubeChannelId: "",
-      tiktokHandle: "",
-      instagramHandle: "",
-      twitterHandle: "",
-      spotifyId: "",
+    //   youtubeChannelId: "",
+    //   tiktokHandle: "",
+    //   instagramHandle: "",
+    //   twitterHandle: "",
+    //   spotifyId: "",
 
-      pushNotificationsLikes: true,
-      pushNotificationsComments: true,
-      pushNotificationsFollows: true,
-      pushNotificationsDirectMessages: true,
-      pushNotificationsITLUpdates: true,
+    //   pushNotificationsLikes: true,
+    //   pushNotificationsComments: true,
+    //   pushNotificationsFollows: true,
+    //   pushNotificationsDirectMessages: true,
+    //   pushNotificationsITLUpdates: true,
 
-      emailNotificationsAppReleases: true,
-      emailNotificationsITLUpdates: true,
+    //   emailNotificationsAppReleases: true,
+    //   emailNotificationsITLUpdates: true,
 
-      stripeConnectedAccountId: "",
-      stripeCustomerId: "",
-    };
+    //   stripeConnectedAccountId: "",
+    //   stripeCustomerId: "",
+    // };
 
     router.push("/profile");
   };
