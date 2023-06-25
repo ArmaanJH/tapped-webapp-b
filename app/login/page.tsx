@@ -23,7 +23,7 @@ const Login = () => {
 
     try {
       await login(data.email, data.password);
-      router.push("/feed");
+      router.push("/profile");
     } catch (err) {
       console.log(err);
     }
@@ -34,7 +34,7 @@ const Login = () => {
 
     try {
       await googleLogin();
-      router.push("/feed");
+      router.push("/profile");
     } catch (err) {
       console.log(err);
     }
