@@ -6,6 +6,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { UserModel } from "../../models/userModel";
 import { useAuth } from "../../context/AuthContext";
+import { doc, setDoc, Timestamp, getFirestore } from "firebase/firestore";
+
+let db = getFirestore();
 
 const Onboard = () => {
   const { user } = useAuth();
@@ -19,6 +22,43 @@ const Onboard = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    await setDoc(doc(db, "users", user.uid), {
+      id: user.uid,
+      username: data.handle,
+      artistName: data.name,
+      bio: data.bio,
+      deleted: false,
+      account_type: "basic",
+      badgesCount: 0,
+      email: user.email,
+      emailNotificationsAppReleases: true,
+      emailNotificationsITLUpdates: true,
+      epkUrl: "",
+      followerCount: 0,
+      followingCount: 0,
+      genres: [""],
+      insagramHandle: "",
+      label: "",
+      lat: 0,
+      lng: 0,
+      loopsCount: 0,
+      occupations: [""],
+      placeId: data.location,
+      profilePicture: "/assets/images/profile.jpg",
+      pushNotificationsLikes: true,
+      pushNotificationsComments: true,
+      pushNotificationsFollows: true,
+      pushNotificationsDirectMessages: true,
+      pushNotificationsITLUpdates: true,
+      shadowBanned: false,
+      soundcloud: "",
+      spotifyId: "",
+      stripeConnectedAccountId: "",
+      stripeCustomerId: "",
+      tiktokHandle: "",
+      youtubeChannelId: "",
+    });
 
     let currentUser: UserModel = {
       id: user.uid,
