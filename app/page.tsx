@@ -1,45 +1,48 @@
 "use client";
 
-import { UserModel } from "../models/userModel";
 import Feed from "../components/Feed";
-
-let user: UserModel = {
-  id: "sdlkj",
-  email: "123@gmail.com",
-
-  username: "Armaanio123",
-
-  artistName: "Armaan",
-  bio: "yuh",
-  genres: ["hi", "hello", "yo"],
-  occupations: ["hi", "hello", "yo"],
-  label: "Safety First Records",
-
-  profilePicture: "yes",
-
-  loopsCount: 0,
-  badgesCount: 0,
-  followerCount: 0,
-  followingCount: 0,
-
-  deleted: false,
-  shadowBanned: false,
-  accountType: "basic",
-
-  pushNotificationsLikes: true,
-  pushNotificationsComments: true,
-  pushNotificationsFollows: true,
-  pushNotificationsDirectMessages: true,
-  pushNotificationsITLUpdates: true,
-
-  emailNotificationsAppReleases: true,
-  emailNotificationsITLUpdates: true,
-};
+import Link from "next/link";
+import Image from "next/image";
 
 const Home = () => {
   return (
-    <div>
-      <p className="tapped_txt_blue">Landing Page</p>
+    <div className="h-full grid grid-cols-3 gap-3 flex justify-center items-center p-16">
+      <Link href="/jayduhhh">
+        <div className="rounded-lg shadow-lg bg-[#363636] flex inline">
+          <Image
+            src="/assets/images/jayduhhh-profile.jpg"
+            width={100}
+            height={100}
+            className="rounded-full border-4 border-[#42A5F5] shadow mx-auto"
+            alt="profile"
+          />
+          <p className="text-xl tapped_txt_blue pt-8 pr-8 pl-8">@jayduhhh</p>
+        </div>
+      </Link>
+      <Link href="/seelife">
+        <div className="rounded-lg shadow-lg bg-[#363636] flex inline">
+          <Image
+            src="/assets/images/seelife-profile1.jpg"
+            width={100}
+            height={100}
+            className="rounded-full border-4 border-[#42A5F5] shadow mx-auto"
+            alt="profile"
+          />
+          <p className="text-xl tapped_txt_blue pt-8 pr-8 pl-8">@seelife</p>
+        </div>
+      </Link>
+      <Link href="/jack-harlow">
+        <div className="rounded-lg shadow-lg bg-[#363636] flex inline">
+          <Image
+            src="/assets/images/jackharlow-profile.jpg"
+            width={100}
+            height={100}
+            className="rounded-full border-4 border-[#42A5F5] shadow mx-auto"
+            alt="profile"
+          />
+          <p className="text-xl tapped_txt_blue pt-8 pr-8 pl-8">@jackharlow</p>
+        </div>
+      </Link>
     </div>
   );
 };

@@ -13,16 +13,16 @@ const Profile = () => {
     <div className="w-full h-full grid grid-cols-[25%_75%] gap-2 p-8 divide-x-2 divide-gray-500/40">
       <div className="w-full">
         <Image
-          src="/assets/images/profile.jpg"
+          src="/assets/images/seelife-profile1.jpg"
           width={300}
           height={300}
-          className="rounded-full border-4 border-[#42A5F5] shadow mx-auto"
+          className="rounded-full border-4 border-[#42A5F5] shadow mx-auto "
           alt="profile"
         />
         <div className="p-2">
           <div className="flex justify-center">
             <p className="font-satoshi text-white text-center text-3xl pr-2">
-              Armaan Hossain
+              SeeLife
             </p>
             <div className="pt-1">
               <span className="bg-blue-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded-full dark:bg-gray-700 dark:text-blue-400">
@@ -47,24 +47,22 @@ const Profile = () => {
             <button className="tapped_btn">Reserve For Booking</button>
           </div>
           <p className="font-satoshi text-xs text-white text-center">
-            @armaanio123
+            @seelife
           </p>
-          <p className="font-satoshi text-white text-center">Indendent</p>
-          <p className="font-satoshi tapped_txt_blue text-center">
-            Tapped Developer
-          </p>
+          <p className="font-satoshi text-white text-center"></p>
+          <p className="font-satoshi tapped_txt_blue text-center"></p>
           <p className="font-satoshi text-white text-center rounded-lg shadow-lg bg-[#363636] p-4">
-            Here to make cool stuff and do dope things
+            Music {">"} Everything else
           </p>
           <div className="flex inline-block justify-center">
             <p className="font-satoshi text-white text-center p-1 ">
-              Followers: 4
+              Followers: 24
             </p>
             <p className="font-satoshi text-white text-center p-1 ">
-              Following: 10
+              Following: 9
             </p>
             <p className="font-satoshi tapped_txt_blue text-center p-1">
-              New York City
+              Richmond
             </p>
           </div>
           <div className="flex justify-center">
@@ -81,6 +79,22 @@ const Profile = () => {
                 viewBox="0 0 24 24"
               >
                 <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+              </svg>
+            </button>
+            <div className="p-2"></div>
+            <button
+              type="button"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              className="mb-2 inline-block bg-[#ff0000] rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
               </svg>
             </button>
             <div className="p-2"></div>
@@ -118,9 +132,23 @@ const Profile = () => {
           </div>
           <div>
             <p className="text-white text-xl text-center">Past Bookings</p>
-            <p className="font-satoshi text-xs text-center tapped_txt_blue">
-              No Past Bookings
-            </p>
+            <div>
+              <p className="font-satoshi text-sm text-center tapped_txt_blue">
+                Performer
+              </p>
+              <p className="font-satoshi text-xs text-center text-white">
+                @thealley_rva booked @seelife for service "For a Live
+                Performance!"
+              </p>
+            </div>
+            <div>
+              <p className="font-satoshi text-sm text-center tapped_txt_blue">
+                Performer
+              </p>
+              <p className="font-satoshi text-xs text-center text-white">
+                @rvasfw booked @seelife for service "UNKNOWN"
+              </p>
+            </div>
           </div>
           <div>
             <p className="text-white text-xl text-center">Cancelled Booking</p>
@@ -174,9 +202,19 @@ const Profile = () => {
                   <title>Rating star</title>
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
+                <svg
+                  aria-hidden="true"
+                  className="w-7 h-7 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Rating star</title>
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
                 <span className="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
                 <p className="ml-2 text-sm font-bold text-white dark:text-white">
-                  4.03
+                  4.89
                 </p>
               </div>
             </div>
@@ -225,19 +263,9 @@ const Profile = () => {
                   <title>Rating star</title>
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
-                <svg
-                  aria-hidden="true"
-                  className="w-7 h-7 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <title>Rating star</title>
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                </svg>
                 <span className="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
                 <p className="ml-2 text-sm font-bold text-white dark:text-white">
-                  4.96
+                  4.31
                 </p>
               </div>
             </div>
@@ -276,9 +304,29 @@ const Profile = () => {
                   <title>Rating star</title>
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
                 </svg>
+                <svg
+                  aria-hidden="true"
+                  className="w-7 h-7 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Rating star</title>
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <svg
+                  aria-hidden="true"
+                  className="w-7 h-7 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Rating star</title>
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
                 <span className="w-1 h-1 mx-1.5 bg-gray-500 rounded-full dark:bg-gray-400"></span>
                 <p className="ml-2 text-sm font-bold text-white dark:text-white">
-                  3.72
+                  4.90
                 </p>
               </div>
             </div>
@@ -289,7 +337,7 @@ const Profile = () => {
                 Booking Frequency
               </p>
               <Image
-                src="/assets/images/armaan_booking_analytics.jpg"
+                src="/assets/images/seelife-booking-analytics.jpg"
                 width={300}
                 height={300}
                 className="rounded shadow border-4 border-[#262626]"
@@ -301,7 +349,7 @@ const Profile = () => {
                 Artist Genres
               </p>
               <Image
-                src="/assets/images/armaan_genre_analytics.jpg"
+                src="/assets/images/seelife-genre-analytics.jpg"
                 width={300}
                 height={300}
                 className="rounded shadow border-4 border-[#262626]"
